@@ -1,0 +1,29 @@
+[15:20:52] [main/INFO]: Setting user: Player715
+[15:21:03] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:21:32] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[15:21:41] [Sound Library Loader/INFO]: Sound engine started
+[15:21:53] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[15:21:53] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[15:22:04] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[15:22:06] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[15:22:06] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[15:22:07] [Sound Library Loader/INFO]: Sound engine started
+[15:22:32] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[15:22:32] [Server thread/INFO]: Generating keypair
+[15:22:35] [Server thread/INFO]: Preparing start region for level 0
+[15:22:36] [Server thread/INFO]: Preparing spawn area: 32%
+[15:22:37] [Server thread/INFO]: Changing view distance to 12, from 10
+[15:22:38] [Server thread/INFO]: Player715[local:E:30a1795e] logged in with entity id 370 at (-346.7526885552263, 64.0, 239.45149060640222)
+[15:22:38] [Server thread/INFO]: Player715 joined the game
+[15:22:39] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2691ms behind, skipping 53 tick(s)
+[15:22:49] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
+[15:22:49] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
+[15:23:09] [Server thread/INFO]: [Player715: Given [Gold Ore] * 64 to Player715]
+[15:23:09] [Client thread/INFO]: [CHAT] Given [Gold Ore] * 64 to Player715
+[15:23:16] [Client thread/INFO]: Stopping!
+[15:23:16] [Server thread/INFO]: Stopping server
+[15:23:16] [Server thread/INFO]: Saving players
+[15:23:16] [Server thread/INFO]: Saving worlds
+[15:23:16] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[15:23:16] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[15:23:16] [Server thread/INFO]: Saving chunks for level 'New World'/The End
