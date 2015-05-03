@@ -1,6 +1,7 @@
 package com.turnedslayer.darkcraft.help.Gui.basicFurnace;
 
 import com.turnedslayer.darkcraft.blocks.tiles.TileDarkBasicFurnace;
+import com.turnedslayer.darkcraft.help.Gui.basicFurnace.ContainerBasicFurnace;
 import com.turnedslayer.darkcraft.libs.References;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -42,7 +43,7 @@ public class GuiBasicFurnace extends GuiContainer
         int l = (this.height - this.ySize) / 2;
 
 
-        rf = this.DarkFurnace.storage.getEnergyStored();
+        rf = this.DarkFurnace.energy;
         this.drawTexturedModalRect(k + 7, l + 4, 176, 31,(rf / 10000 * 67) , 8);
 
     }

@@ -31,7 +31,7 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     private ItemStack[] furnaceItemStacks = new ItemStack[2];
     private String field_145958_o;
     protected int capacity;
-    public int energy;
+    public int energy = this.storage.getEnergyStored();
     public int maxRF = 10000;
 
 
@@ -189,12 +189,13 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     {
         boolean flag = this.smeltingTime > 0;
         boolean flag1 = false;
+        this.markDirty();
 
 
 
         if (!this.worldObj.isRemote)
         {
-
+                this.markDirty();
 
                 if (this.canSmelt())
                 {

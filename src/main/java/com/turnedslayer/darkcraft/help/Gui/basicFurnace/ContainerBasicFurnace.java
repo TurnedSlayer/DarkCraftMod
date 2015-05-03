@@ -17,8 +17,8 @@ public class ContainerBasicFurnace extends Container
 {
 
     private TileDarkBasicFurnace tileDarkBasicFurnace;
-    private int getEnergyStored;
-    private int getMaxEnergyStored;
+    public int getEnergyStored;
+    public int lastEnergyStored;
 
     public ContainerBasicFurnace(InventoryPlayer par1InventoryPlayer, TileDarkBasicFurnace par2TileDarkBasicFurnace)
     {
@@ -106,13 +106,15 @@ public class ContainerBasicFurnace extends Container
         }
 
         return itemstack;
+
     }
 
 
-    public void addCraftingToCrafters(ICrafting par1ICrafting)
+    public void addCraftingToCrafters(ICrafting p_75132_1_)
     {
-        super.addCraftingToCrafters(par1ICrafting);
-        par1ICrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
+        super.addCraftingToCrafters(p_75132_1_);
+        p_75132_1_.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
+
     }
 
     /**
@@ -120,39 +122,44 @@ public class ContainerBasicFurnace extends Container
      */
     public void detectAndSendChanges()
     {
-
         super.detectAndSendChanges();
-        for (int i = 0; i < this.crafters.size(); ++i) {
-            ICrafting icrafting = (ICrafting) this.crafters.get(i);
-            if (this.getEnergyStored != this.getMaxEnergyStored) {
 
+        for (int i = 0; i < this.crafters.size(); ++i)
+        {
+            ICrafting icrafting = (ICrafting)this.crafters.get(i);
+
+            if (this.lastEnergyStored != this.tileDarkBasicFurnace.storage.getEnergyStored())
+            {
                 icrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
             }
 
-            this.getEnergyStored = this.tileDarkBasicFurnace.storage.getEnergyStored();
-            this.getMaxEnergyStored = this.tileDarkBasicFurnace.storage.getMaxEnergyStored();
         }
 
+       this.lastEnergyStored = this.tileDarkBasicFurnace.storage.getEnergyStored();
     }
 
     @SideOnly(Side.CLIENT)
-    public void updateProgressBar(int par1, int par2)
+    public void updateProgressBar(int p_75137_1_, int p_75137_2_)
     {
-        if (par1 == 0)
+        if (p_75137_1_ == 0)
         {
-            this.tileDarkBasicFurnace.smeltingTime = par2;
+            this.tileDarkBasicFurnace.energy = p_75137_2_;
         }
 
-        if (par1 == 1)
+       /* if (p_75137_1_ == 0)
         {
-            this.tileDarkBasicFurnace.burnTime = par2;
+            this.tileFurnace.furnaceCookTime = p_75137_2_;
         }
 
-        if (par1 == 2)
+        if (p_75137_1_ == 1)
         {
-            this.tileDarkBasicFurnace.currentItemSmeltingTime = par2;
+            this.tileFurnace.furnaceBurnTime = p_75137_2_;
         }
+
+        if (p_75137_1_ == 2)
+        {
+            this.tileFurnace.currentItemBurnTime = p_75137_2_;
+        }*/
     }
-
 
 }
