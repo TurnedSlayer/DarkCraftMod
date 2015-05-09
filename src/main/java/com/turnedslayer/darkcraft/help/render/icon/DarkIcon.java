@@ -64,7 +64,7 @@ public class DarkIcon extends TextureAtlasSprite
     /**
      * Lists of DarkIcon depending on this one.
      */
-    protected Set<DarkIcon> dependants = new HashSet<>();
+    protected Set<DarkIcon> dependants = new HashSet<DarkIcon>();
 
     public DarkIcon()
     {

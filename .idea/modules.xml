@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/forge-1.7.10-10.13.3.1365-1.7.10-src.iml" filepath="$PROJECT_DIR$/forge-1.7.10-10.13.3.1365-1.7.10-src.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DarkCraftMod.iml" filepath="$PROJECT_DIR$/DarkCraftMod.iml" />
     </modules>
   </component>
 </project>
+
