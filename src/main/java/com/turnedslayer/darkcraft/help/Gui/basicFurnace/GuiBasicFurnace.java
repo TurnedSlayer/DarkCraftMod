@@ -23,7 +23,7 @@ public class GuiBasicFurnace extends GuiContainer
         xSize = 176;
         ySize = 164;
         this.DarkFurnace = tileDarkBasicFurnace;
-        rf = this.DarkFurnace.storage.getEnergyStored();
+        rf = this.DarkFurnace.energy;
 
     }
 

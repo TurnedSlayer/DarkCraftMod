@@ -109,17 +109,18 @@ public class ContainerBasicFurnace extends Container
 
     }
 
-
-    public void addCraftingToCrafters(ICrafting p_75132_1_)
+    @Override
+    public void addCraftingToCrafters(ICrafting iCrafting)
     {
-        super.addCraftingToCrafters(p_75132_1_);
-        p_75132_1_.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
+        super.addCraftingToCrafters(iCrafting);
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.energy);
 
     }
 
     /**
      * Looks for changes made in the container, sends them to every listener.
      */
+    @Override
     public void detectAndSendChanges()
     {
         super.detectAndSendChanges();
@@ -128,22 +129,23 @@ public class ContainerBasicFurnace extends Container
         {
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
 
-            if (this.lastEnergyStored != this.tileDarkBasicFurnace.storage.getEnergyStored())
+            if (this.lastEnergyStored != this.tileDarkBasicFurnace.energy)
             {
-                icrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
+                icrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.energy);
+                System.out.println("crafters");
             }
 
         }
 
-       this.lastEnergyStored = this.tileDarkBasicFurnace.storage.getEnergyStored();
+       this.lastEnergyStored = this.tileDarkBasicFurnace.energy;
     }
 
     @SideOnly(Side.CLIENT)
-    public void updateProgressBar(int p_75137_1_, int p_75137_2_)
+    public void updateProgressBar(int valueType, int updatedValue)
     {
-        if (p_75137_1_ == 0)
+        if (valueType == 0)
         {
-            this.tileDarkBasicFurnace.energy = p_75137_2_;
+            this.tileDarkBasicFurnace.energy = updatedValue;
         }
 
        /* if (p_75137_1_ == 0)

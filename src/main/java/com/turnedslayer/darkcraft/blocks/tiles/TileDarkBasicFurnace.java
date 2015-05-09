@@ -206,6 +206,7 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
                         this.smeltingTime = 0;
                         this.smeltItem();
                         flag1 = true;
+                        this.markDirty();
 
                     }
                 }
