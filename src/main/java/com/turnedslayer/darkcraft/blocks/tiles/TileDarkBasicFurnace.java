@@ -236,10 +236,11 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
         if (sendUpdate)
         {
             this.markDirty();
-            this.state = this.storage.getEnergyStored() > 0 ? (byte) 1 : (byte) 0;
-            this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, this.getBlockType(), 1, this.state);
+            System.out.println("Block update");
+            //this.state = this.storage.getEnergyStored() > 0 ? (byte) 1 : (byte) 0;
+            //this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, this.getBlockType(), 1, this.state);
             //PacketHandler.INSTANCE.sendToAllAround(new MessageTileEntityAludel(this, inventory[OUTPUT_INVENTORY_INDEX]), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, (double) this.xCoord, (double) this.yCoord, (double) this.zCoord, 128d));
-            this.worldObj.notifyBlockChange(this.xCoord, this.yCoord, this.zCoord, this.getBlockType());
+            //this.worldObj.notifyBlockChange(this.xCoord, this.yCoord, this.zCoord, this.getBlockType());
         }
     }
 

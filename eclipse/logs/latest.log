@@ -1,67 +1,32 @@
-[22:24:05] [main/INFO]: Setting user: Player718
-[22:24:12] [Client thread/INFO]: LWJGL Version: 2.9.1
-[22:24:26] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[22:24:32] [Sound Library Loader/INFO]: Sound engine started
-[22:24:40] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[22:24:40] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[22:24:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[22:24:47] [Client thread/INFO]: Created: 512x512 textures/items-atlas
-[22:24:48] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[22:24:49] [Sound Library Loader/INFO]: Sound engine started
-[22:25:02] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[22:25:02] [Server thread/INFO]: Generating keypair
-[22:25:03] [Server thread/INFO]: Preparing start region for level 0
-[22:25:04] [Server thread/INFO]: Preparing spawn area: 21%
-[22:25:06] [Client thread/INFO]: Realms library version == 1.3.5
-[22:25:06] [Server thread/INFO]: Changing view distance to 12, from 10
-[22:25:07] [MCO Availability Checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[22:25:07] [MCO Availability Checker #1/ERROR]: Couldn't connect to realms: 
-[22:25:07] [Server thread/INFO]: Player718[local:E:d9720de4] logged in with entity id 381 at (-259.86117620813206, 64.0, 198.81550366180392)
-[22:25:07] [Server thread/INFO]: Player718 joined the game
-[22:25:08] [Server thread/INFO]: Saving and pausing game...
-[22:25:08] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:25:08] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:25:08] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:25:13] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
-[22:25:13] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
-[22:25:31] [Server thread/INFO]: Saving and pausing game...
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:25:31] [Server thread/INFO]: Stopping server
-[22:25:31] [Server thread/INFO]: Saving players
-[22:25:31] [Server thread/INFO]: Saving worlds
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:25:31] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:28:22] [Client thread/INFO]: Stopping!
-359
-[22:28:07] [Client thread/INFO]: LWJGL Version: 2.9.1
-[22:28:22] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[22:28:28] [Sound Library Loader/INFO]: Sound engine started
-[22:28:36] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[22:28:36] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[22:28:42] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[22:28:43] [Client thread/INFO]: Created: 512x512 textures/items-atlas
-[22:28:44] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[22:28:45] [Sound Library Loader/INFO]: Sound engine started
-[22:28:59] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[22:28:59] [Server thread/INFO]: Generating keypair
-[22:29:00] [Server thread/INFO]: Preparing start region for level 0
-[22:29:01] [Server thread/INFO]: Preparing spawn area: 27%
-[22:29:03] [Server thread/INFO]: Changing view distance to 12, from 10
-[22:29:03] [Server thread/INFO]: Player359[local:E:bc4cfb2e] logged in with entity id 380 at (-259.86117620813206, 64.0, 198.81550366180392)
-[22:29:03] [Server thread/INFO]: Player359 joined the game
-[22:29:05] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2752ms behind, skipping 55 tick(s)
-[22:29:09] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
-[22:29:09] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
-[22:29:16] [Server thread/INFO]: Stopping server
-[22:29:16] [Server thread/INFO]: Saving players
-[22:29:16] [Server thread/INFO]: Saving worlds
-[22:29:16] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:29:16] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:29:16] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[22:29:18] [Client thread/FATAL]: Reported exception thrown!
+[17:40:50] [main/INFO]: Setting user: Player265
+[17:40:57] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:41:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[17:41:16] [Sound Library Loader/INFO]: Sound engine started
+[17:41:23] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[17:41:23] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[17:41:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[17:41:30] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[17:41:31] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[17:41:32] [Sound Library Loader/INFO]: Sound engine started
+[17:42:05] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[17:42:05] [Server thread/INFO]: Generating keypair
+[17:42:06] [Server thread/INFO]: Preparing start region for level 0
+[17:42:07] [Server thread/INFO]: Preparing spawn area: 30%
+[17:42:09] [Server thread/INFO]: Changing view distance to 12, from 10
+[17:42:10] [Server thread/INFO]: Player265[local:E:3ea7a8e0] logged in with entity id 381 at (-259.8698830618571, 64.0, 198.3930465179113)
+[17:42:10] [Server thread/INFO]: Player265 joined the game
+[17:42:12] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2355ms behind, skipping 47 tick(s)
+[17:42:16] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
+[17:42:16] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
+[17:42:22] [Server thread/INFO]: [Player265: Given [Gold Ore] * 64 to Player265]
+[17:42:22] [Client thread/INFO]: [CHAT] Given [Gold Ore] * 64 to Player265
+[17:42:25] [Server thread/INFO]: Stopping server
+[17:42:25] [Server thread/INFO]: Saving players
+[17:42:26] [Server thread/INFO]: Saving worlds
+[17:42:26] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[17:42:26] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[17:42:26] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[17:42:28] [Client thread/FATAL]: Reported exception thrown!
 net.minecraft.util.ReportedException: Updating screen events
 	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1735) ~[Minecraft.class:?]
 	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1029) ~[Minecraft.class:?]
@@ -84,7 +49,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index: 38, Size: 38
 	at java.util.ArrayList.rangeCheck(ArrayList.java:635) ~[?:1.7.0_51]
 	at java.util.ArrayList.get(ArrayList.java:411) ~[?:1.7.0_51]
 	at net.minecraft.inventory.Container.mergeItemStack(Container.java:620) ~[Container.class:?]
-	at com.turnedslayer.darkcraft.help.Gui.basicFurnace.ContainerBasicFurnace.transferStackInSlot(ContainerBasicFurnace.java:86) ~[ContainerBasicFurnace.class:?]
+	at com.turnedslayer.darkcraft.help.Gui.basicFurnace.ContainerBasicFurnace.transferStackInSlot(ContainerBasicFurnace.java:93) ~[ContainerBasicFurnace.class:?]
 	at net.minecraft.inventory.Container.slotClick(Container.java:279) ~[Container.class:?]
 	at net.minecraft.client.multiplayer.PlayerControllerMP.windowClick(PlayerControllerMP.java:478) ~[PlayerControllerMP.class:?]
 	at codechicken.nei.guihook.GuiContainerManager.handleSlotClick(GuiContainerManager.java:537) ~[GuiContainerManager.class:?]

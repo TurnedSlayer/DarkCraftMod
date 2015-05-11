@@ -50,26 +50,26 @@ public class ContainerBasicFurnace extends Container
     }
 
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
+    public ItemStack transferStackInSlot(EntityPlayer p_82846_1_, int p_82846_2_)
     {
         ItemStack itemstack = null;
-        Slot slot = (Slot)this.inventorySlots.get(par2);
+        Slot slot = (Slot)this.inventorySlots.get(p_82846_2_);
 
         if (slot != null && slot.getHasStack())
         {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
 
-            if (par2 == 2)
+            if (p_82846_2_ == 2)
             {
-                if (!this.mergeItemStack(itemstack1, 2, 39, true))
+                if (!this.mergeItemStack(itemstack1, 3, 39, true))
                 {
                     return null;
                 }
 
                 slot.onSlotChange(itemstack1, itemstack);
             }
-            else if (par2 != 1 && par2 != 0)
+            else if (p_82846_2_ != 1 && p_82846_2_ != 0)
             {
                 if (FurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null)
                 {
@@ -78,12 +78,19 @@ public class ContainerBasicFurnace extends Container
                         return null;
                     }
                 }
-                else if (par2 >= 30 && par2 < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
+                else if (p_82846_2_ >= 3 && p_82846_2_ < 30)
+                {
+                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
+                    {
+                        return null;
+                    }
+                }
+                else if (p_82846_2_ >= 30 && p_82846_2_ < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 2, 39, false))
+            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
             {
                 return null;
             }
@@ -102,12 +109,12 @@ public class ContainerBasicFurnace extends Container
                 return null;
             }
 
-            slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
+            slot.onPickupFromSlot(p_82846_1_, itemstack1);
         }
 
         return itemstack;
-
     }
+
 
     @Override
     public void addCraftingToCrafters(ICrafting iCrafting)
