@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
@@ -44,6 +45,7 @@ public class GuiBasicFurnace extends GuiContainer
        // if(this.tileFurnace.getEnergyStored())
 
         rf = this.tileDarkBasicFurnace.storage.getEnergyStored();
+        System.out.println(this.tileDarkBasicFurnace.storage.getEnergyStored());
         this.drawTexturedModalRect(k + 7, l + 4, 176, 31,(rf / 10000 * 67) , 8);
 
 

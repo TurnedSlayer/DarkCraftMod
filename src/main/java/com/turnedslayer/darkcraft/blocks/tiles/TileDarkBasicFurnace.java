@@ -17,7 +17,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 /**
  * Created by TurnedSlayer.
  */
-public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEnergyHandler {
+public class TileDarkBasicFurnace extends TileDarkBase implements IInventory, IEnergyHandler {
     private TileDarkBasicFurnace tilef;
     public EnergyStorage storage = new EnergyStorage(10000);
     private String localizedName;
@@ -44,9 +44,25 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
 
 
 
+
+
+
     }
 
 
+    @Override
+    public Packet getDescriptionPacket()
+    {
+        NBTTagCompound nbttagcompound = new NBTTagCompound();
+        this.writeCustomNBT(nbttagcompound);
+        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt)
+    {
+        this.readCustomNBT(pkt.func_148857_g());
+    }
 
     public ItemStack decrStackSize(int i, int j) {
         if(this.inventory[i]!=null){
@@ -247,130 +263,6 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     }
 
 
-/*
-public void updateEntity()
-{
-    boolean flag = this.furnaceBurnTime > 0;
-    boolean flag1 = false;
-
-    if (this.furnaceBurnTime > 0)
-    {
-        --this.furnaceBurnTime;
-    }
-
-    if (!this.worldObj.isRemote)
-    {
-        if (this.furnaceBurnTime == 0 && this.canSmelt())
-        {
-            this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[1]);
-
-            if (this.furnaceBurnTime > 0)
-            {
-                flag1 = true;
-
-                if (this.inventory[1] != null)
-                {
-                    --this.inventory[1].stackSize;
-
-                    if (this.inventory[1].stackSize == 0)
-                    {
-                        this.inventory[1] = inventory[1].getItem().getContainerItem(inventory[1]);
-                    }
-                }
-            }
-        }
-
-        if (this.isBurning() && this.canSmelt())
-        {
-            ++this.furnaceCookTime;
-
-            if (this.furnaceCookTime == 200)
-            {
-                this.furnaceCookTime = 0;
-                this.smeltItem();
-                flag1 = true;
-            }
-        }
-        else
-        {
-            this.furnaceCookTime = 0;
-        }
-
-        if (flag != this.furnaceBurnTime > 0)
-        {
-            flag1 = true;
-            BlockFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-        }
-    }
-
-    if (flag1)
-    {
-        this.markDirty();
-    }
-}
-*/
-
-    /*
-    public void updateEntity(){
-        boolean flag = this.burnTime > 0;
-        boolean flag1 = false;
-
-
-        if (!this.worldObj.isRemote)
-        {
-
-
-
-            if (this.canGrind())
-            {
-                this.currentItemSmeltingTime = storage.getEnergyStored();
-
-            }
-
-            if (this.isSmelting() && this.canGrind())
-            {
-
-
-                ++this.smeltingTime;
-
-                if (this.smeltingTime == 200)
-                {
-                    this.smeltingTime = 0;
-                    this.grindItem();
-                    flag1 = true;
-                }
-            }
-            else
-            {
-                this.smeltingTime = 0;
-            }
-
-            if (flag != this.smeltingTime > 0)
-            {
-                flag1 = true;
-                blockDarkBasicFurnace.updateBlockState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-            }
-        }
-
-        if (flag1)
-        {
-            this.markDirty();
-        }
-    }
-    */
-
-
-
-
- /*   @Override
-    public void readCustomNBT(NBTTagCompound nbt)
-    {
-        super.readCustomNBT(nbt);
-       // facing = nbt.getInteger("facing");
-        //tank.readFromNBT(nbt.getCompoundTag("tank"));
-        storage.readFromNBT(nbt);
-        //tick = nbt.getInteger("tick");
-    }*/
     @Override
     public void readFromNBT(NBTTagCompound nbt)
     {
@@ -384,16 +276,17 @@ public void updateEntity()
                 this.inventory[slot] = ItemStack.loadItemStackFromNBT(itemTag);
         }
     }
-  /*  @Override
+
+    public void readCustomNBT(NBTTagCompound nbt)
+    {
+        storage.readFromNBT(nbt);
+    }
+
+
     public void writeCustomNBT(NBTTagCompound nbt)
     {
-        super.writeCustomNBT(nbt);
-        //nbt.setInteger("facing", facing);
-        //NBTTagCompound tankTag = tank.writeToNBT(new NBTTagCompound());
-        //nbt.setTag("tank", tankTag);
         storage.writeToNBT(nbt);
-       // nbt.setInteger("tick", tick);
-    }*/
+    }
     @Override
     public void writeToNBT(NBTTagCompound nbt)
     {
