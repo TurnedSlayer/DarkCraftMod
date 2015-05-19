@@ -7,6 +7,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
@@ -20,15 +21,15 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     private TileDarkBasicFurnace tilef;
     public EnergyStorage storage = new EnergyStorage(10000);
     private String localizedName;
-    private static final int[] furnaceItemStacks_top = new int[]{0};
-    private static final int[] furnaceItemStacks_sides = new int[]{1};
-    private static final int[] furnaceItemStacks_bottom = new int[]{2,1};
+    private static final int[] inventory_top = new int[]{0};
+    private static final int[] inventory_sides = new int[]{1};
+    private static final int[] inventory_bottom = new int[]{2,1};
     public int furnaceSpeed = 10;
     public int rfPerUse = 1000;
     public int burnTime;
     public int currentItemSmeltingTime;
     public int smeltingTime;
-    private ItemStack[] furnaceItemStacks = new ItemStack[2];
+    private ItemStack[] inventory = new ItemStack[2];
     private String field_145958_o;
     protected int capacity;
     public int energy = this.storage.getEnergyStored();
@@ -48,16 +49,16 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
 
 
     public ItemStack decrStackSize(int i, int j) {
-        if(this.furnaceItemStacks[i]!=null){
+        if(this.inventory[i]!=null){
             ItemStack itemstack;
-            if(this.furnaceItemStacks[i].stackSize<=j){
-                itemstack=this.furnaceItemStacks[i];
-                this.furnaceItemStacks[i]=null;
+            if(this.inventory[i].stackSize<=j){
+                itemstack=this.inventory[i];
+                this.inventory[i]=null;
                 return itemstack;
             }else{
-                itemstack=this.furnaceItemStacks[i].splitStack(j);
-                if(this.furnaceItemStacks[i].stackSize==0){
-                    this.furnaceItemStacks[i]=null;
+                itemstack=this.inventory[i].splitStack(j);
+                if(this.inventory[i].stackSize==0){
+                    this.inventory[i]=null;
                 }
                 return itemstack;
             }
@@ -66,9 +67,9 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     }
 
     public ItemStack getStackInSlotOnClosing(int i) {
-        if(this.furnaceItemStacks[i]!=null){
-            ItemStack itemstack=this.furnaceItemStacks[i];
-            this.furnaceItemStacks[i]=null;
+        if(this.inventory[i]!=null){
+            ItemStack itemstack=this.inventory[i];
+            this.inventory[i]=null;
             return itemstack;
         }
         return null;
@@ -77,7 +78,7 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
 
 
     public void setInventorySlotContents(int par1, ItemStack par2ItemStack) {
-        this.furnaceItemStacks[par1] = par2ItemStack;
+        this.inventory[par1] = par2ItemStack;
 
         if (par2ItemStack != null && par2ItemStack.stackSize > this.getInventoryStackLimit()) {
             par2ItemStack.stackSize = this.getInventoryStackLimit();
@@ -130,12 +131,12 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
     @Override
     public ItemStack getStackInSlot(int par1)
     {
-        return this.furnaceItemStacks[par1];
+        return this.inventory[par1];
     }
 
     public int getSizeInventory()
     {
-        return this.furnaceItemStacks.length;
+        return this.inventory.length;
     }
 
     public boolean isSmelting(){
@@ -148,19 +149,19 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
 
             if (this.storage.getEnergyStored() <= 500) return false;
 
-            if (this.furnaceItemStacks[0] == null)
+            if (this.inventory[0] == null)
             {
                 return false;
             }
             else
             {
-                ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+                ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
                 if (itemstack == null) return false;
-                if (this.furnaceItemStacks[1] == null) return true;
-                if (!this.furnaceItemStacks[1].isItemEqual(itemstack)) return false;
-                int result = furnaceItemStacks[1].stackSize + itemstack.stackSize;
+                if (this.inventory[1] == null) return true;
+                if (!this.inventory[1].isItemEqual(itemstack)) return false;
+                int result = inventory[1].stackSize + itemstack.stackSize;
 
-                return result <= getInventoryStackLimit() && result <= this.furnaceItemStacks[1].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
+                return result <= getInventoryStackLimit() && result <= this.inventory[1].getMaxStackSize(); //Forge BugFix: Make it respect stack sizes properly.
             }
         }
 
@@ -169,17 +170,17 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
 
             private void smeltItem(){
                 if(this.canSmelt()){
-                    ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+                    ItemStack itemstack = FurnaceRecipes.smelting().getSmeltingResult(this.inventory[0]);
                     this.storage.modifyEnergyStored(-500);
-                    if(this.furnaceItemStacks[1]==null){
-                        this.furnaceItemStacks[1]=itemstack.copy();
-                    }else if(this.furnaceItemStacks[1].isItemEqual(itemstack)){
-                        this.furnaceItemStacks[1].stackSize+=itemstack.stackSize;
+                    if(this.inventory[1]==null){
+                        this.inventory[1]=itemstack.copy();
+                    }else if(this.inventory[1].isItemEqual(itemstack)){
+                        this.inventory[1].stackSize+=itemstack.stackSize;
                     }
-                    this.furnaceItemStacks[0].stackSize--;
+                    this.inventory[0].stackSize--;
 
-                    if(this.furnaceItemStacks[0].stackSize<=0){
-                        this.furnaceItemStacks[0]=null;
+                    if(this.inventory[0].stackSize<=0){
+                        this.inventory[0]=null;
                     }
                 }
             }
@@ -236,7 +237,8 @@ public class TileDarkBasicFurnace extends TileEntity implements IInventory, IEne
         if (sendUpdate)
         {
             this.markDirty();
-            System.out.println("Block update");
+            worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+            //System.out.println("Block update");
             //this.state = this.storage.getEnergyStored() > 0 ? (byte) 1 : (byte) 0;
             //this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, this.getBlockType(), 1, this.state);
             //PacketHandler.INSTANCE.sendToAllAround(new MessageTileEntityAludel(this, inventory[OUTPUT_INVENTORY_INDEX]), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, (double) this.xCoord, (double) this.yCoord, (double) this.zCoord, 128d));
@@ -260,19 +262,19 @@ public void updateEntity()
     {
         if (this.furnaceBurnTime == 0 && this.canSmelt())
         {
-            this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.furnaceItemStacks[1]);
+            this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[1]);
 
             if (this.furnaceBurnTime > 0)
             {
                 flag1 = true;
 
-                if (this.furnaceItemStacks[1] != null)
+                if (this.inventory[1] != null)
                 {
-                    --this.furnaceItemStacks[1].stackSize;
+                    --this.inventory[1].stackSize;
 
-                    if (this.furnaceItemStacks[1].stackSize == 0)
+                    if (this.inventory[1].stackSize == 0)
                     {
-                        this.furnaceItemStacks[1] = furnaceItemStacks[1].getItem().getContainerItem(furnaceItemStacks[1]);
+                        this.inventory[1] = inventory[1].getItem().getContainerItem(inventory[1]);
                     }
                 }
             }
@@ -359,32 +361,53 @@ public void updateEntity()
 
 
 
-    public void readFromNBT(NBTTagCompound nbt){
-        super.readFromNBT(nbt);
+
+ /*   @Override
+    public void readCustomNBT(NBTTagCompound nbt)
+    {
+        super.readCustomNBT(nbt);
+       // facing = nbt.getInteger("facing");
+        //tank.readFromNBT(nbt.getCompoundTag("tank"));
         storage.readFromNBT(nbt);
-
+        //tick = nbt.getInteger("tick");
+    }*/
+    @Override
+    public void readFromNBT(NBTTagCompound nbt)
+    {
+        super.readFromNBT(nbt);
+        NBTTagList invList = nbt.getTagList("inventory", 10);
+        for (int i=0; i<invList.tagCount(); i++)
+        {
+            NBTTagCompound itemTag = invList.getCompoundTagAt(i);
+            int slot = itemTag.getByte("Slot") & 255;
+            if(slot>=0 && slot<this.inventory.length)
+                this.inventory[slot] = ItemStack.loadItemStackFromNBT(itemTag);
+        }
     }
-    public void writeToNBT(NBTTagCompound nbt){
-        super.writeToNBT(nbt);
+  /*  @Override
+    public void writeCustomNBT(NBTTagCompound nbt)
+    {
+        super.writeCustomNBT(nbt);
+        //nbt.setInteger("facing", facing);
+        //NBTTagCompound tankTag = tank.writeToNBT(new NBTTagCompound());
+        //nbt.setTag("tank", tankTag);
         storage.writeToNBT(nbt);
-    }
-
-
-
-
-
+       // nbt.setInteger("tick", tick);
+    }*/
     @Override
-    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity packet) {
-        readFromNBT(packet.func_148857_g());
-    }
-
-    @Override
-    public Packet getDescriptionPacket() {
-        NBTTagCompound nbtTag = new NBTTagCompound();
-
-        writeToNBT(nbtTag);
-
-        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
+    public void writeToNBT(NBTTagCompound nbt)
+    {
+        super.writeToNBT(nbt);
+        NBTTagList invList = new NBTTagList();
+        for(int i=0; i<this.inventory.length; i++)
+            if(this.inventory[i] != null)
+            {
+                NBTTagCompound itemTag = new NBTTagCompound();
+                itemTag.setByte("Slot", (byte)i);
+                this.inventory[i].writeToNBT(itemTag);
+                invList.appendTag(itemTag);
+            }
+        nbt.setTag("inventory", invList);
     }
 
 
@@ -397,7 +420,10 @@ public void updateEntity()
     @Override
     public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
 
-        return storage.receiveEnergy(maxReceive, false);
+        int rec = this.storage.receiveEnergy(maxReceive, simulate);
+        this.markDirty();
+        worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+        return rec;
     }
 
     @Override

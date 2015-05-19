@@ -1,7 +1,6 @@
 package com.turnedslayer.darkcraft.help.Gui.basicFurnace;
 
 import com.turnedslayer.darkcraft.blocks.tiles.TileDarkBasicFurnace;
-import com.turnedslayer.darkcraft.help.Gui.basicFurnace.ContainerBasicFurnace;
 import com.turnedslayer.darkcraft.libs.References;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,9 +11,9 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiBasicFurnace extends GuiContainer
 {
-    public TileDarkBasicFurnace DarkFurnace;
+    public TileDarkBasicFurnace tileFurnace;
     private static final ResourceLocation backgroundimage = new ResourceLocation(References.MODID.toLowerCase() + ":" + "textures/gui/Dark Furnace.png");
-    public int rf;
+    int rf;
 
 
     public GuiBasicFurnace(InventoryPlayer inventoryPlayer, TileDarkBasicFurnace tileDarkBasicFurnace)
@@ -22,12 +21,12 @@ public class GuiBasicFurnace extends GuiContainer
         super(new ContainerBasicFurnace(inventoryPlayer, tileDarkBasicFurnace));
         xSize = 176;
         ySize = 164;
-        this.DarkFurnace = tileDarkBasicFurnace;
-        rf = this.DarkFurnace.energy;
+        //this.DarkFurnace = tileDarkBasicFurnace;
+        //rf = this.tileFurnace.getRFStored();
 
     }
 
-    @Override
+   // @Override
     @SideOnly(Side.CLIENT)
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
@@ -37,14 +36,13 @@ public class GuiBasicFurnace extends GuiContainer
         int var4 = (this.width - this.xSize)/2;
         int var5 = (this.height - this.ySize)/2;
         this.drawTexturedModalRect(var4, var5,0,0,this.xSize,this.ySize);
-        int var6;
-        int i1;
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
 
-
-        rf = this.DarkFurnace.energy;
+       // if(this.tileFurnace.getEnergyStored())
+        rf = this.tileFurnace.storage.getEnergyStored();
         this.drawTexturedModalRect(k + 7, l + 4, 176, 31,(rf / 10000 * 67) , 8);
+        //System.out.println("Gui Update");
 
     }
 

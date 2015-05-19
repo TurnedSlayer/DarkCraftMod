@@ -114,6 +114,7 @@ public class ContainerBasicFurnace extends Container
 
         return itemstack;
     }
+/*
 
 
     @Override
@@ -124,9 +125,11 @@ public class ContainerBasicFurnace extends Container
 
     }
 
-    /**
+    */
+/**
      * Looks for changes made in the container, sends them to every listener.
-     */
+     *//*
+
     @Override
     public void detectAndSendChanges()
     {
@@ -144,7 +147,7 @@ public class ContainerBasicFurnace extends Container
 
         }
 
-       this.lastEnergyStored = this.tileDarkBasicFurnace.energy;
+        this.lastEnergyStored = this.tileDarkBasicFurnace.energy;
     }
 
     @SideOnly(Side.CLIENT)
@@ -155,7 +158,8 @@ public class ContainerBasicFurnace extends Container
             this.tileDarkBasicFurnace.energy = updatedValue;
         }
 
-       /* if (p_75137_1_ == 0)
+       */
+/* if (p_75137_1_ == 0)
         {
             this.tileFurnace.furnaceCookTime = p_75137_2_;
         }
@@ -168,7 +172,9 @@ public class ContainerBasicFurnace extends Container
         if (p_75137_1_ == 2)
         {
             this.tileFurnace.currentItemBurnTime = p_75137_2_;
-        }*/
+        }*//*
+
     }
+*/
 
 }
