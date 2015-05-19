@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiBasicFurnace extends GuiContainer
 {
-    public TileDarkBasicFurnace tileFurnace;
+    TileDarkBasicFurnace tileDarkBasicFurnace;
     private static final ResourceLocation backgroundimage = new ResourceLocation(References.MODID.toLowerCase() + ":" + "textures/gui/Dark Furnace.png");
     int rf;
 
@@ -21,6 +21,8 @@ public class GuiBasicFurnace extends GuiContainer
         super(new ContainerBasicFurnace(inventoryPlayer, tileDarkBasicFurnace));
         xSize = 176;
         ySize = 164;
+        this.tileDarkBasicFurnace=tileDarkBasicFurnace;
+
         //this.DarkFurnace = tileDarkBasicFurnace;
         //rf = this.tileFurnace.getRFStored();
 
@@ -40,9 +42,10 @@ public class GuiBasicFurnace extends GuiContainer
         int l = (this.height - this.ySize) / 2;
 
        // if(this.tileFurnace.getEnergyStored())
-        rf = this.tileFurnace.storage.getEnergyStored();
+
+        rf = this.tileDarkBasicFurnace.storage.getEnergyStored();
         this.drawTexturedModalRect(k + 7, l + 4, 176, 31,(rf / 10000 * 67) , 8);
-        //System.out.println("Gui Update");
+
 
     }
 
