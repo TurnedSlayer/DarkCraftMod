@@ -33,7 +33,6 @@ public class TileDarkBasicFurnace extends TileDarkBase implements IInventory, IE
     private String field_145958_o;
     protected int capacity;
     public int energy = this.storage.getEnergyStored();
-    public int maxRF = 10000;
     protected byte state;
 
 

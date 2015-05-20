@@ -94,7 +94,7 @@ public class ContainerBasicFurnace extends Container {
     @Override
     public void addCraftingToCrafters(ICrafting iCrafting) {
         super.addCraftingToCrafters(iCrafting);
-        iCrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.energy);
+        iCrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
 
     }
 
@@ -110,20 +110,20 @@ public class ContainerBasicFurnace extends Container {
         for (int i = 0; i < this.crafters.size(); ++i) {
             ICrafting icrafting = (ICrafting) this.crafters.get(i);
 
-            if (this.lastEnergyStored != this.tileDarkBasicFurnace.energy) {
-                icrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.energy);
+            if (this.lastEnergyStored != this.tileDarkBasicFurnace.storage.getEnergyStored()) {
+                icrafting.sendProgressBarUpdate(this, 0, this.tileDarkBasicFurnace.storage.getEnergyStored());
                 System.out.println("crafters");
             }
 
         }
 
-        this.lastEnergyStored = this.tileDarkBasicFurnace.energy;
+        this.lastEnergyStored = this.tileDarkBasicFurnace.storage.getEnergyStored();
     }
 
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int valueType, int updatedValue) {
         if (valueType == 0) {
-            this.tileDarkBasicFurnace.energy = updatedValue;
+           this.lastEnergyStored = updatedValue;
         }
     }
 }
