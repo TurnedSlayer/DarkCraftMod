@@ -1,38 +1,36 @@
-[15:34:52] [main/INFO]: Setting user: Player265
-[15:34:57] [Client thread/INFO]: LWJGL Version: 2.9.1
-[15:35:09] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[15:35:14] [Sound Library Loader/INFO]: Sound engine started
-[15:35:20] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[15:35:20] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[15:35:25] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
-[15:35:26] [Client thread/INFO]: Created: 512x512 textures/items-atlas
-[15:35:27] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
-[15:35:28] [Sound Library Loader/INFO]: Sound engine started
-[15:35:36] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[15:35:36] [Server thread/INFO]: Generating keypair
-[15:35:37] [Server thread/INFO]: Preparing start region for level 0
-[15:35:38] [Server thread/INFO]: Preparing spawn area: 45%
-[15:35:39] [Server thread/INFO]: Changing view distance to 12, from 10
-[15:35:39] [Server thread/INFO]: Player265[local:E:4d85e7f1] logged in with entity id 352 at (-259.8834689787969, 64.0, 198.60927825613223)
-[15:35:39] [Server thread/INFO]: Player265 joined the game
-[15:35:40] [Server thread/INFO]: Saving and pausing game...
-[15:35:40] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:35:41] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:35:41] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:35:44] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
-[15:35:44] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
-[15:36:17] [Server thread/INFO]: Saving and pausing game...
-[15:36:17] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:36:17] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:36:17] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:36:23] [Server thread/INFO]: Saving and pausing game...
-[15:36:23] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:36:24] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:36:24] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:36:26] [Server thread/INFO]: Stopping server
-[15:36:26] [Server thread/INFO]: Saving players
-[15:36:26] [Server thread/INFO]: Saving worlds
-[15:36:26] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[15:36:26] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[15:36:26] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[15:36:28] [Client thread/INFO]: Stopping!
+[15:38:02] [main/INFO]: Setting user: Player343
+[15:38:08] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:38:19] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[15:38:24] [Sound Library Loader/INFO]: Sound engine started
+[15:38:30] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[15:38:30] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[15:38:35] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:DarkCraft Mod, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:Thermal Dynamics, FMLFileResourcePack:Thermal Expansion, FMLFileResourcePack:Thermal Foundation, FMLFileResourcePack:Waila, FMLFileResourcePack:Waila Harvestability
+[15:38:36] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[15:38:37] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[15:38:38] [Sound Library Loader/INFO]: Sound engine started
+[15:38:55] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[15:38:55] [Server thread/INFO]: Generating keypair
+[15:38:56] [Server thread/INFO]: Preparing start region for level 0
+[15:38:57] [Server thread/INFO]: Preparing spawn area: 50%
+[15:38:59] [Server thread/INFO]: Changing view distance to 12, from 10
+[15:38:59] [Server thread/INFO]: Player343[local:E:1fb0ed5d] logged in with entity id 346 at (-259.8834689787969, 64.0, 198.60927825613223)
+[15:38:59] [Server thread/INFO]: Player343 joined the game
+[15:39:04] [Client thread/INFO]: [CHAT] Version 1.0.4.29 of CodeChickenCore is available
+[15:39:04] [Client thread/INFO]: [CHAT] Version 1.0.3.74 of NotEnoughItems is available
+[15:39:16] [Server thread/INFO]: Saving and pausing game...
+[15:39:16] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[15:39:16] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[15:39:16] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:55:03] [Server thread/INFO]: Player343 has just earned the achievement [Taking Inventory]
+[16:55:03] [Client thread/INFO]: [CHAT] Player343 has just earned the achievement [Taking Inventory]
+[16:55:31] [Server thread/INFO]: Saving and pausing game...
+[16:55:31] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:55:31] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[16:55:31] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:55:31] [Server thread/INFO]: Stopping server
+[16:55:31] [Server thread/INFO]: Saving players
+[16:55:32] [Server thread/INFO]: Saving worlds
+[16:55:32] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:55:32] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[16:55:32] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:55:33] [Client thread/INFO]: Stopping!
